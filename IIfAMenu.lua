@@ -35,7 +35,8 @@ local faceValues = {}
 
 local function buildFontRef()
 	local varName, Data
-	for varName, Data in pairs(IIfA.data.fontList[GetAPIVersion()]) do
+
+	for varName, Data in pairs(GetFontList()) do
 		if Data ~= 'Tooltip Default' and Data ~= "Custom" then
 			local gData = _G[Data]
 			if gData and gData.GetFontInfo then
@@ -464,7 +465,7 @@ function IIfA:CreateOptionsMenu()
 					type = "dropdown",
 					name = "Tooltip Font",
 					tooltip = "The font used for location information added to both default and custom tooltips",
-					choices = IIfA:GetFontList(),
+					choices = GetFontList(),
 					scrollable = true,
 					--sort = "name-up",
 					getFunc = function() return (IIfA:GetSettings().in2TooltipsFont or "ZoFontGame") end,
@@ -793,19 +794,7 @@ function IIfA:CreateSettingsWindow(savedVars, defaults)
 
 end
 
--- from sidTools, by SirInsidiator
--- hacked up to return just the list of font names
-local function BuildFontList()
-    local fonts = { "Tooltip Default" }
-    for varname, value in zo_insecurePairs(_G) do
-        if(type(value) == "userdata" and value.GetFontInfo) then
-            fonts[#fonts + 1] = varname
-        end
-    end
-    return fonts
-end
-
-function IIfA:GetFontList()
+local function GetFontList()
 	local apiVer = GetAPIVersion()
 	if self.data.fontList == nil or IIfA.data.fontList[apiVer] == nil then
 		self.data.fontList = {}

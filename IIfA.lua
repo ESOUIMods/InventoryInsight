@@ -15,7 +15,7 @@ DISCLAIMER
 if IIfA == nil then IIfA = {} end
 
 IIfA.name 				= "Inventory Insight"
-IIfA.version 			= "3.28"
+IIfA.version 			= "3.29"
 IIfA.author 			= "AssemblerManiac & manavortex"
 IIfA.defaultAlertSound 	= nil
 IIfA.colorHandler 		= nil
@@ -331,11 +331,6 @@ function IIfA_onLoad(eventCode, addOnName)
 	IIfA.data 		= ZO_SavedVars:NewAccountWide("IIfA_Data", 1, "Data", defaultGlobal)
 
 	IIfA:RebuildHouseMenuDropdowns()
-
---	if IIfA.data.fontList == nil or IIfA.data.fontList[GetAPIVersion()] == nil then
---		IIfA.data.fontList = {}
---		IIfA.data.fontList[GetAPIVersion()] = BuildFontList()
---	end
 
 	--  nuke non-global positioning settings
 	local ObjSettings = IIfA:GetSettings()
