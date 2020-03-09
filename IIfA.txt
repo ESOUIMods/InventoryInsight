@@ -10,8 +10,6 @@
 ; pChat is optional dependency because it should be loaded BEFORE any other addon so it provides
 ; load time debugging
 
-libs/LibCustomTitles/LibCustomTitles.lua
-
 IIfA.xml
 Bindings.xml
 CharCurrencyTooltip.lua
