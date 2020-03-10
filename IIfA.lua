@@ -333,6 +333,11 @@ function IIfA_onLoad(eventCode, addOnName)
 
 	IIfA:RebuildHouseMenuDropdowns()
 
+--	if IIfA.data.fontList == nil or IIfA.data.fontList[GetAPIVersion()] == nil then
+--		IIfA.data.fontList = {}
+--		IIfA.data.fontList[GetAPIVersion()] = BuildFontList()
+--	end
+
 	--  nuke non-global positioning settings
 	local ObjSettings = IIfA:GetSettings()
 	if ObjSettings.in2InventoryFrameSceneSettings ~= nil then
