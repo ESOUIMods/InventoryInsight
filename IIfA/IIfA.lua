@@ -558,9 +558,7 @@ function IIfA:MakeBSI()
 						if idx == BAG_GUILDBANK then		-- replace idx with appropriate guild bank name instead of the ID for BAG_GUILDBANK (to differentiate guild banks)
 							idx = locname
 						end
-						if bs[idx] == nil then
-							bs[idx] = {}
-						end
+						bs[idx] = bs[idx] or {}
 						if nil ~= data.bagSlot then
 							for bagSlot, qty in pairs(data.bagSlot) do
 								bs[idx][bagSlot] = itemKey
