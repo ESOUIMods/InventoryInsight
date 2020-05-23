@@ -791,18 +791,6 @@ function IIfA:CreateSettingsWindow(savedVars, defaults)
 
 end
 
--- from sidTools, by SirInsidiator
--- hacked up to return just the list of font names
--- local function BuildFontList()
---     local fonts = { "Tooltip Default" }
---     for varname, value in zo_insecurePairs(_G) do
---         if(type(value) == "userdata" and value.GetFontInfo) then
---             fonts[#fonts + 1] = varname
---         end
---     end
---     return fonts
--- end
-
 function IIfA:GetFontList()
 	local apiVer = GetAPIVersion()
 	if self.data.fontList == nil or IIfA.data.fontList[apiVer] == nil then
