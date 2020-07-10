@@ -1,9 +1,8 @@
 local IIfA = IIfA
 IIfA.houseNameToIdTbl = {}
 
-local LAS = LibAsync
-local task = IIfA.task or LAS:Create("IIfA_DataCollection")
-IIfA.task = task
+local task 	= IIfA.task or LibAsync:Create("IIfA_DataCollection")
+IIfA.task	= task
 
 function IIfA:IsCharacterInventoryIgnored()
 	return IIfA.data.ignoredCharInventories[IIfA.currentCharacterId] or false

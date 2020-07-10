@@ -1,8 +1,7 @@
 local IIfA 			= IIfA or {}
 local _
-local LAS = LibAsync
-local task = IIfA.task or LAS:Create("IIfA_DataCollection")
-IIfA.task = task
+local task 			= IIfA.task or LibAsync:Create("IIfA_DataCollection")
+IIfA.task			= task
 
 local function p(...)
 	if nil == IIfA or nil == IIfA.DebugOut then return end
